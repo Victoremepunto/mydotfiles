@@ -1,0 +1,13 @@
+#!/bin/bash
+
+WORKDIR="$(dirname "${BASH_SOURCE[0]}")"
+
+source "$WORKDIR/aliases"
+source "$WORKDIR/functions"
+
+# Git bash completion and prompt configuration
+source '/usr/share/git-core/contrib/completion/git-prompt.sh'
+export PS1='[\u@\h \W$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")]\$ '
+
+# Set Vim as default editor
+export EDITOR=vim
